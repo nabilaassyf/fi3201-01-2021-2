@@ -5,7 +5,7 @@ import html
 char1 = html.unescape('&#x25FB;')
 char2 = html.unescape('&#x25FC;')
 
-NIM = '10298345'
+NIM = '10218100'
 for x in NIM:
   n = int(x, 10)
   s = ''
