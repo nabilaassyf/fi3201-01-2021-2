@@ -20,6 +20,9 @@ from matplotlib import animation
 fig = plt.figure()
 ax = plt.axes(xlim=(0, 2), ylim=(-2, 2))
 line, = ax.plot([], [], lw=2)
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_title('Animasi Gelombang')
 
 # initialization function: plot the background of each frame
 def init():
@@ -29,10 +32,9 @@ def init():
 # animation function.  This is called sequentially
 def animate(i):
     x = np.linspace(0, 2, 1000)
-		
-		# ---- equation of y ----
-		
-		# -----------------------
+    #y = np.sin(2 * np.pi * (x * 0.5 -0.5 * 0.01 * i))
+    #y = np.sin(2 * np.pi * (x * 0.5 + 0.5 * 0.01 * i))
+    #y = np.sin(2 * np.pi * x * 0.5) * np.cos(2 * np.pi * 0.5 * 0.01 * i)
 		
     line.set_data(x, y)
     return line,
@@ -55,12 +57,12 @@ anim = animation.FuncAnimation(fig, animate, init_func=init,
 # url https://jakevdp.github.io/downloads/code/basic_animation.py
 
 # modification from Sparisoma Viridi 2022-03-29
-option = 1
+option = 0
 
 if option == 0:
 	writergif = animation.PillowWriter(fps=30)
 	anim.save('basic_animation.gif', writer=writergif)
-# anim.save('basic_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+# anim.save('Jawab 2,3,4.gif', fps=30, extra_args=['-vcodec', 'libx264'])
 else:
 	plt.show()
 
@@ -86,7 +88,7 @@ Potongan kode yang perlu disisipkan adalah
 y = np.sin(2 * np.pi * (x * 0.5 - 0.5 * 0.01 * i))
 ```
 dan hasil berkas gifnya adalah \
-![gif file from simulation wave to right]()
+![gif file from simulation wave to right](https://github.com/nabilaassyf/fi3201-01-2021-2/blob/main/assignments/04/10218100/Jawab%202.gif)
 
 
 ## question 3
@@ -98,7 +100,7 @@ Potongan kode yang perlu disisipkan adalah
 y = np.sin(2 * np.pi * (x * 0.5 + 0.5 * 0.01 * i))
 ```
 dan hasil berkas gifnya adalah \
-![gif file from simulation wave to left]()
+![gif file from simulation wave to left](https://github.com/nabilaassyf/fi3201-01-2021-2/blob/main/assignments/04/10218100/Jawab%203.gif)
 
 
 ## question 4
@@ -110,4 +112,4 @@ Potongan kode yang perlu disisipkan adalah
 y = np.sin(2 * np.pi * x * 0.5) * np.cos(2 * np.pi * 0.5 * 0.01 * i)
 ```
 dan hasil berkas gifnya adalah \
-![gif file from simulation wave stationary]()
+![gif file from simulation wave stationary](https://github.com/nabilaassyf/fi3201-01-2021-2/blob/main/assignments/04/10218100/Jawab%204.gif)
